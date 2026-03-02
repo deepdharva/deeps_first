@@ -14,17 +14,32 @@
     padding:0;
     box-sizing:border-box;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color:white;
+    overflow-x:hidden;
+}
+
+/* PARTICLES BACKGROUND */
+#particles-js{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    top:0;
+    left:0;
 }
 
 nav{
     background:black;
     padding:15px;
     text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav a{
@@ -40,12 +55,13 @@ nav a:hover{
 
 header{
     text-align:center;
-    padding:80px 20px;
+    padding:100px 20px;
 }
 
 header h1{
-    font-size:50px;
+    font-size:52px;
     margin-bottom:20px;
+    text-shadow:0 0 15px rgba(0,242,255,0.7);
 }
 
 header p{
@@ -56,41 +72,42 @@ header p{
 }
 
 section{
-    padding:60px 20px;
+    padding:80px 20px;
     text-align:center;
+    border-top:1px solid rgba(255,255,255,0.1);
 }
 
 .section-title{
-    font-size:35px;
-    margin-bottom:30px;
+    font-size:36px;
+    margin-bottom:40px;
 }
 
 .card-container{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    gap:25px;
 }
 
 .card{
     background:rgba(255,255,255,0.1);
-    padding:25px;
+    padding:30px;
     width:280px;
-    border-radius:10px;
+    border-radius:12px;
     transition:0.3s;
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:rgba(0,242,255,0.2);
+    transform:scale(1.07);
+    background:rgba(0,242,255,0.25);
 }
 
 .feedback-btn{
-    padding:15px 30px;
+    padding:16px 35px;
     font-size:18px;
     background:#00f2ff;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     cursor:pointer;
     font-weight:bold;
     transition:0.3s;
@@ -98,19 +115,22 @@ section{
 
 .feedback-btn:hover{
     background:#00c6d6;
-    transform:scale(1.05);
+    transform:scale(1.08);
+    box-shadow:0 0 15px rgba(0,242,255,0.7);
 }
 
 footer{
     background:black;
     text-align:center;
-    padding:20px;
+    padding:25px;
     margin-top:40px;
 }
 </style>
 </head>
 
 <body>
+
+<div id="particles-js"></div>
 
 <nav>
 <a href="#home">Home</a>
@@ -163,8 +183,6 @@ make predictions, and automate tasks with high accuracy and efficiency.
 
 </div>
 </section>
-
-<!-- NEW SECTION ADDED -->
 
 <section id="examples">
 <h2 class="section-title">More Real-Life Examples</h2>
@@ -234,6 +252,22 @@ Please share your feedback to help us improve and enhance the learning experienc
 <footer>
 <p>© 2026 The Power of Machine Intelligence | Created by Deep Dharva</p>
 </footer>
+
+<!-- PARTICLES JS LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#00f2ff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 2 }
+  }
+});
+</script>
 
 </body>
 </html>
